@@ -11,17 +11,19 @@ body {
 
 .main-container {
   display: flex;
-  width: 400px;
-  height: 400px;
+  width: 900px;
+  height: 900px;
   border: 1px solid black;
-  flex-wrap: wrap;
 }
 
-.main-container div {
-  min-width: 80px;
-  min-height: 80px;
+.main-container >div {
   display: flex;
-  flex: 0 1 auto;
-  flex: 1;
+  flex-direction: column;
+  flex: 1 1;
   border: 1px solid red;
+}
+
+.main-container>div>div{
+  flex: 1 1;
+  border: 1px solid orange;
 }
