@@ -11,8 +11,8 @@ body {
 
 .main-container {
   display: flex;
-  width: 900px;
-  height: 900px;
+  width: 960px;
+  height: 960px;
   margin: 20px 0px 50px 0px;
 }
 

@@ -13,11 +13,18 @@ submitBtn.addEventListener('click', ()=>{
   if(validateInput(input.value)){
     drawGrid(input.value);
   }
+  listInput.value = "0";
   input.value = "";
 });
 
 function colorGrid(event){
-  event.target.style.backgroundColor = "black";
+  let color;
+  switch(document.querySelector('#color').value){
+    case 'black': color = "black"; break;
+    case 'curosr': color = `rgb(${event.clientX%255}, ${event.clientY%255}, ${(event.clientX + event.clientY)%255})`; break;
+    case 'random': color = `rgb(${getRandomNumber()}, ${getRandomNumber()}, ${getRandomNumber()})`; break;
+  }
+  event.target.style.backgroundColor = color;
 };
 
 function drawGrid(num){
@@ -41,4 +48,8 @@ function validateInput(num){
     return false;
   }
   return true;
+}
+
+function getRandomNumber(){
+  return Math.floor(Math.random()*255);
 }
