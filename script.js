@@ -6,19 +6,24 @@ const parentGrid = document.querySelector('.main-container');
 
 submitBtn.addEventListener('click', ()=>{
   inputValue = input.value;
+  drawGrid(inputValue);
   input.value = "";
 });
-
-for(let i = 0; i<100; i++){
-  let gridRow = document.createElement('div');
-  for(let j=0; j<100; j++){
-   let gridCol = document.createElement('div');
-   gridCol.addEventListener("mouseover", colorGrid)
-   gridRow.appendChild(gridCol);
-  }
-  parentGrid.appendChild(gridRow);  
-}
 
 function colorGrid(event){
   event.target.style.backgroundColor = "black";
 };
+
+function drawGrid(num){
+  parentGrid.innerText = "";
+  for(let i = 0; i<num; i++){
+    let gridRow = document.createElement('div');
+    for(let j=0; j<num; j++){
+     let gridCol = document.createElement('div');
+     gridCol.addEventListener("mouseover", colorGrid)
+     gridRow.appendChild(gridCol);
+    }
+    parentGrid.appendChild(gridRow);  
+  }
+  
+}
