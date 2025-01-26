@@ -3,10 +3,16 @@ let inputValue;
 const input = document.querySelector('#numOfGrid');
 const submitBtn = document.querySelector('#submit');
 const parentGrid = document.querySelector('.main-container');
+const listInput = document.querySelector('#grid-options');
+
+listInput.addEventListener('change', (event)=>{
+  input.value = event.target.value;
+})
 
 submitBtn.addEventListener('click', ()=>{
-  inputValue = input.value;
-  drawGrid(inputValue);
+  if(validateInput(input.value)){
+    drawGrid(input.value);
+  }
   input.value = "";
 });
 
@@ -26,4 +32,13 @@ function drawGrid(num){
     parentGrid.appendChild(gridRow);  
   }
   
+}
+
+function validateInput(num){
+  if(num<0 || num>100){
+    alert("Enter a number between 0 to 100");
+    input.focus();
+    return false;
+  }
+  return true;
 }
