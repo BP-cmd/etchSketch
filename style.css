@@ -13,17 +13,17 @@ body {
   display: flex;
   width: 900px;
   height: 900px;
-  border: 1px solid black;
+  border: 1px solid rgb(45, 45, 45);
+  margin: 20px 0px 50px 0px;
 }
 
 .main-container >div {
   display: flex;
   flex-direction: column;
   flex: 1 1;
-  border: 1px solid red;
 }
 
 .main-container>div>div{
   flex: 1 1;
-  border: 1px solid orange;
+  border: 1px solid rgb(163, 162, 162);
 }
